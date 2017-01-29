@@ -1,7 +1,7 @@
 class BoxesController < ApplicationController
 
   def index
-    @boxes = Box.all
+    @boxes = Box.all.order(params[:sort])
   end
 
   def show

@@ -1,21 +1,31 @@
 <%= form_for [@box, @box.products.new] do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title, placeholder: "title" %>
+<div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: "title" %>
+</div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description, placeholder: "description"%>
+<div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder: "description"%>
+</div>
 
-  <%= f.label :price %>
-  <%= f.number_field :price, placeholder:"price" %>
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-addon">€</div>
+        <%= f.number_field :price, placeholder: "eg. 100", class: "form-control" %>
+    </div>
+</div>
 
-  <%= f.label :image_url %>
-<%= f.text_field :image, placeholder: "image_url" %>
+<div class="form-group">
+    <span class="btn btn-default">
+        <%= f.label :image_url %>
+        <%= f.file_field :image, placeholder: "image_url" %>
+    </span>
+</div>
 
-  <div class="actions">
-      <%= f.submit "Add new product", class: "btn btn-success" %>
-  </div>
+<div class="actions">
+    <%= f.submit "Add new product", class: "btn btn-success" %>
+</div>
 
 <% end %>
-
-z

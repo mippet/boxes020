@@ -1,4 +1,9 @@
-<h1>index page</h1>
+<h1>Boxes 020</h1>
+
+<p>  <%=link_to "order by name a-z", :sort => "title ASC" %></p>
+<p>  <%=link_to "order by name z-a", :sort => "title DESC" %></p>
+
+<hr>
 
 <p><% @boxes.each do |box| %></p>
   <p><%= link_to box.title, box_path(box.id) %></p>
