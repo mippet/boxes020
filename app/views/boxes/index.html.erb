@@ -2,6 +2,7 @@
 
 <p><% @boxes.each do |box| %></p>
   <p><%= link_to box.title %></p>
+  <%= link_to "[Delete]", box_path( box.id ), method: :delete, data: { confirm: "Are you sure?" } %>
   <p><img src="<%= box.image %>"></p>
 <% end %>
 

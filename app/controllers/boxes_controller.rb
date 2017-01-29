@@ -10,12 +10,18 @@ class BoxesController < ApplicationController
 
   def create
   @box = Box.new(box_params)
-
-  if @box.save
-      redirect_to root_path
-    else
-      render 'new'
+    if @box.save
+        redirect_to root_path
+      else
+        render 'new'
     end
+  end
+
+  def destroy
+    @box = Box.find(params[:id])
+    @box.destroy
+
+    redirect_to root_path
   end
 
   private
