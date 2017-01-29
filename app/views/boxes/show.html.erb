@@ -1,1 +1,15 @@
 <h1>show page all products</h1>
+
+<% @products.each do |product| %>
+
+<%= product.title %>
+<%= product.description %>
+<%= product.price %>
+
+<p><img src="<%= product.image %>"></p>
+
+<% end %>
+
+<hr>
+
+<%= render "products/form" %>

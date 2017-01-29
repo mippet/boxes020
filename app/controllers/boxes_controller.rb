@@ -6,6 +6,7 @@ class BoxesController < ApplicationController
 
   def show
     @box = Box.find(params[:id])
+    @products = Product.all
   end
 
   def new
