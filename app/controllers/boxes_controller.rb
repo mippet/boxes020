@@ -4,6 +4,10 @@ class BoxesController < ApplicationController
     @boxes = Box.all
   end
 
+  def show
+    @box = Box.find(params[:id])
+  end
+
   def new
    @box = Box.new
   end
