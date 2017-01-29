@@ -1,1 +1,10 @@
 <h1>index page</h1>
+
+<%= @boxes.each do |box| %>
+  <%= box.title %>
+  <%= box.description %>
+   <img src="<%= box.image %>" >
+<% end %>
+
+<hr>
+<%= render 'form' %>
