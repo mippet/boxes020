@@ -5,11 +5,13 @@
 <%= product.title %>
 <%= product.description %>
 <%= product.price %>
+  <!-- <%= link_to "[Edit]", box_product_path(@box, product), method: :put %> -->
   <%= link_to "[Delete]", box_product_path( @box, product ), method: :delete, data: { confirm: "Are you sure?" } %>
 <p><img src="<%= product.image %>"></p>
 
 <% end %>
 
+<%= link_to "Back", root_path %>
 <hr>
 
 <%= render "products/form" %>
