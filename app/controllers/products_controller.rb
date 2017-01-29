@@ -11,7 +11,13 @@ class ProductsController < ApplicationController
 
     @product.save
         redirect_to @product.box
+  end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    redirect_to @product.box
   end
 
   private
