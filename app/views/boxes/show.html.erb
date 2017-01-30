@@ -1,14 +1,14 @@
 <h1>Products</h1>
 
 <% @products.each do |product| %>
-
+  <% if product.box[:id] == @box[:id] %>
 <%= product.title %>
 <%= product.description %>
 <%= product.price %>
   <!-- <%= link_to "[Edit]", box_product_path(@box, product), method: :put %> -->
   <%= link_to "[Delete]", box_product_path( @box, product ), method: :delete, data: { confirm: "Are you sure?" } %>
 <p><img src="<%= product.image %>"></p>
-
+<% end %>
 <% end %>
 
 <%= link_to "Back", root_path %>

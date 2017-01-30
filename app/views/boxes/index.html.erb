@@ -4,14 +4,14 @@
 <p>  <%=link_to "order by name z-a", :sort => "title DESC" %></p>
 
 <hr>
-
+<div class='container'>
 <p><% @boxes.each do |box| %></p>
   <p><%= link_to box.title, box_path(box.id) %></p>
   <p><%= box.description %></p>
   <%= link_to "[Delete]", box_path( box.id ), method: :delete, data: { confirm: "Are you sure?" } %>
   <p><img src="<%= box.image %>"></p>
 <% end %>
-
+</div>
 <hr>
 
 <%= render 'form' %>
